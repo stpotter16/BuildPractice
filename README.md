@@ -1,0 +1,2 @@
+# BuildPractice
+Practice autotools builds
