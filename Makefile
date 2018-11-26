@@ -6,14 +6,14 @@ SRC := $(wildcard *.c)
 OBJ := $(patsubst %.c,%.o,$(SRC))
 # Options
 CC := gcc
-CGLAGS := -g
-IDFLAGS := -I$(PKGPATH/include)
-LDFLAGS := -L$(PKGPATH/lib)
+CFLAGS := -g
+IDFLAGS := -I$$PKGPATH/include
+LDFLAGS := -L$$PKGPATH/lib
 LDLIBS := -lgrvy
-DLFLAGS := -Wl, -rpath=$(PKPATH/lib) -l:libgrvy-0.34.so
+DLFLAGS := -Wl,-rpath=$$PKGPATH/lib/ -l:libgrvy-0.34.so
 # Rules
 $(EXEC): $(OBJ)
-	$(CC) $(LDFLAGS) $(LDLIBS) -o $@ $^ $(DFLAGS)
+	$(CC) $(LDFLAGS) $(LDLIBS) -o $@ $^ $(DLFLAGS)
 %.o: %.c
 	$(CC) $(CFLAGS) $(IDFLAGS) -c $<
 # Phony targets
