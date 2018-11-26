@@ -1,6 +1,7 @@
 #-*-getpot-*-
 # Test input file for libgrvy
 
+log = 1 # Integer. Switch for logging verbosity. (silent=0, standard=1, debug=2)
 intfoo = 1 # Integer. Test int.
 doublefoo = 1.0 # Double. Test double
 charfoo = foo # String. Test char
