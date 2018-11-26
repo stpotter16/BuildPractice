@@ -7,6 +7,14 @@
 #include <stdio.h>
 #include <grvy.h>
 
+int foo(int *fooint)
+{
+	fooint=2;
+	grvy_printf(GRVY_INFO, "Info message in a function! int is %d now\n", fooint);
+	grvy_printf(GRVY_DEBUG, "Debug message in a function!\n");
+	return 0;
+}
+
 int main(){
 	/* Open file */
 	int open;
@@ -45,6 +53,9 @@ int main(){
 	grvy_printf(GRVY_DEBUG, "This is a debug message!\n");
 	grvy_input_fread_char("charfoo", &charfoo);
 	printf("value of charfoo: %s\n", charfoo);
+
+	int foo_return;
+	foo_return = foo(&intfoo);
 
 	return 0;
 
